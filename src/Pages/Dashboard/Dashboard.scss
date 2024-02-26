@@ -1,0 +1,163 @@
+@use "../../index.scss" as *;
+$colors: #35353a 1, #e91e63 2, #5ab25e 3, #247dea 4;
+$graph-colors: #e91e63 1, #5ab25e 2, #35353a 3;
+$icons-colors: #5ab25e 1, #e91e63 2, #247dea 3, #fb8c00 4, #e91e63 5, #35353a 6;
+
+.dashboard {
+    .sales {
+        margin-bottom: 24px;
+        .row {
+            flex-wrap: wrap;
+            row-gap: 1rem;
+            article {
+                padding: 1rem;
+                background-color: $white-color;
+                border-radius: 1rem;
+                .head {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    [class|="image"] {
+                        border-radius: 1rem;
+                        padding: 1rem;
+                        width: fit-content;
+                        img {
+                            @include dimenssions(25px);
+                            filter: invert(100%);
+                        }
+                    }
+                    small {
+                        color: $text-color;
+                    }
+                    h4 {
+                        color: $head-color;
+                        font-size: 25px;
+                        margin-bottom: 0;
+                    }
+                }
+                p {
+                    color: $text-color;
+                    span {
+                        color: $green-color;
+                        margin-right: 5px;
+                    }
+                    &:nth-last-of-type(2) p span {
+                        color: #f00;
+                    }
+                }
+            }
+            .col:nth-last-of-type(2) p span {
+                color: #f00;
+            }
+        }
+    }
+    .charts {
+        margin-bottom: 24px;
+        article {
+            background-color: $white-color;
+            padding: 1rem;
+            color: $text-color;
+            border-radius: 1rem;
+            [class|="graph"] {
+                border-radius: 1rem;
+                margin-bottom: 1rem;
+            }
+            h5 {
+                color: $head-color;
+                font-weight: bold;
+            }
+        }
+    }
+    .projects {
+        article {
+            background-color: $white-color;
+            border-radius: 1rem;
+            .head {
+                h4 {
+                    color: $head-color;
+                    font-weight: bold;
+                }
+                p {
+                    color: $text-color;
+                    font-size: 20px;
+                    i {
+                        margin-right: 5px;
+                        color: $head-color;
+                    }
+                }
+            }
+            table {
+                overflow-x: auto;
+                color: $text-color;
+                width: 100%;
+                font-size: 12px;
+                tr:not(tr:last-of-type) {
+                    border-bottom: 1px solid #f0f2f5;
+                }
+                thead td,
+                tbody td {
+                    padding: 12px 0;
+                }
+                .members img {
+                    border: 2px solid $white-color;
+                    &:hover {
+                        z-index: 5;
+                    }
+                }
+            }
+        }
+        .col:last-of-type {
+            h5 {
+                color: $head-color;
+                font-weight: bold;
+            }
+            p {
+                color: $text-color;
+                i {
+                    color: $green-color;
+                }
+            }
+            .list-group {
+                h6 {
+                    font-size: 14px;
+                    color: $head-color;
+                    font-weight: bold;
+                }
+                p {
+                    font-size: 12px;
+                }
+                .list-group-item {
+                    padding-top: 12px;
+                    padding-bottom: 12px;
+                }
+            }
+        }
+    }
+}
+
+@each $color, $index in $colors {
+    .image-#{$index} {
+        background-color: $color;
+    }
+}
+
+@each $color, $index in $graph-colors {
+    .graph-#{$index} {
+        background-color: $color;
+    }
+}
+
+@each $color, $index in $icons-colors {
+    .icons-#{$index} {
+        color: $color;
+    }
+}
+
+@media (max-width: 991px) {
+    .projects article .body {
+        overflow-x: auto;
+        table {
+            width: 200%;
+        }
+    }
+}

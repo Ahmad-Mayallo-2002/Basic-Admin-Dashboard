@@ -1,0 +1,21 @@
+@use "./index.scss" as *;
+.content {
+    margin-bottom: 12px;
+    overflow-x: hidden;
+    padding: 12px 0;
+    position: relative;
+}
+.second-col {
+    width: 100%;
+    flex: 1;
+    margin: 0 12px;
+}
+
+@media (max-width: 575px) {
+    .second-col {
+        margin: 0;
+    }
+    main {
+        margin: 0 12px;
+    }
+}

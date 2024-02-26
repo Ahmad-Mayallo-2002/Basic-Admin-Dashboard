@@ -1,0 +1,40 @@
+@use "../../index.scss" as *;
+footer {
+    padding: 1rem 0;
+    .container-fluid {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        p {
+            &:first-of-type {
+                color: $text-color;
+            }
+        }
+        a {
+            width: fit-content;
+            padding: .5rem;
+            background-color: $pink-color;
+            color: $white-color;
+            text-decoration: none;
+            border-radius: .5rem;
+            display: flex;
+            align-items: center;
+            svg {
+                margin-right: .5rem;
+                @include dimenssions(22px);
+                fill: currentColor;
+            }
+        }
+    }
+}
+
+@media (max-width: 575px) {
+    footer .container-fluid {
+        flex-wrap: wrap;
+        justify-content: center;
+        row-gap: 1rem;
+        p:first-of-type {
+            text-align: center;
+        }
+    }
+}

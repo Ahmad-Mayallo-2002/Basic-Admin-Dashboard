@@ -1,0 +1,84 @@
+@use "../../index.scss" as *;
+aside {
+    position: relative;
+    cursor: pointer;
+    max-width: 260px;
+    width: 100%;
+    transition: margin-left .5s;
+    overflow-y: auto;
+    background-color: $black-color;
+    padding: 12px;
+    border-radius: 1rem;
+    color: $white-color;
+    margin-left: 12px;
+    .fa-xmark {
+        position: absolute;
+        right: 12px;
+        font-size: 24px;
+    }
+    h2 {
+        margin-top: 1.5rem;
+        font-size: 1rem;
+        margin-bottom: 1rem;
+        padding-left: .75rem;
+        img {
+            width: 32px;
+            margin-right: 1rem;
+        }
+    }
+    .list-group {
+        row-gap: 5px;
+        .list-group-item {
+            background-color: transparent;
+            border: none;
+            padding: 0;
+            width: 100%;
+            border-radius: .5rem;
+            &:hover {
+                background-color: #83858a80
+            }
+        }
+    }
+    a {
+        border-radius: .5rem;
+        color: $white-color;
+        padding: .75rem;            
+        display: flex;
+        align-items: center;
+        text-decoration: none
+    }
+    h3 {
+        color: $white-color;
+        font-size: .875rem;
+        margin-left: 1rem;
+        margin-top: 1rem;
+    }
+    svg {
+        @include dimenssions(24px);
+        fill: currentColor;
+        margin-right: 10px;
+    }
+    .list-group-item i {
+        font-size: 24px;
+        width: 24px;
+        height: 24px;
+        line-height: 24px;
+        text-align: center;
+        margin-right: 10px;
+    }
+}
+
+@media (max-width: 1199px) {
+    aside {
+        margin-left: -270px + 10px;
+    }
+}
+
+@media (max-width: 767px) {
+    aside {
+        position: fixed;
+        top: 12px;
+        height: calc(100% - 24px);
+        z-index: 500;
+    }
+}

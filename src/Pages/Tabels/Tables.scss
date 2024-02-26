@@ -1,0 +1,71 @@
+@use "../../index.scss" as *;
+.tables {
+    article {
+        padding: 1rem;
+        background-color: $white-color;
+        border-radius: 1rem;
+        margin-top: 1rem;
+        &:last-of-type {
+            margin-top: 2rem;
+        }
+        table {
+            width: 100%;
+            caption {
+                caption-side: top;
+                background-color: $pink-color;
+                padding: 1rem;
+                color: $white-color;
+                border-radius: 10px;
+                transform: translateY(-2rem);
+            }
+            td {
+                margin: 10px 0;
+            }
+            thead {
+                color: $text-color;
+                font-size: 13px;
+                border-bottom: 1px solid #f0f2f5;
+                tr td {
+                    padding: 10px 0;
+                }
+            }
+            tr:not(tr:last-of-type) {
+                border-bottom: 1px solid #f0f2f5;
+            }
+            p {
+                margin-bottom: 0;
+                color: $text-color;
+            }
+            small {
+                color: $text-color;
+            }
+            img {
+                margin-right: 10px;
+                border-radius: 10px;
+            }
+            h6 {
+                color: $head-color;
+                font-weight: bold;
+            }
+            button {
+                color: $head-color;
+                font-weight: bold;
+            }
+            .progress {
+                height: 5px;
+            }
+        }
+    }
+};
+
+@media (max-width: 545px) {
+    .tables article {
+        overflow: auto visible;
+        table {
+            width: 200%;
+            caption {
+                transform: translateY(0);
+            }
+        }
+    }
+}

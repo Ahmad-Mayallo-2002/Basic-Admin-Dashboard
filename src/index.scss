@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+$bg-body: #f0f2f5;
+$pink-color: #e91e63;
+$blue-color: #247dea;
+$green-color: #5ab25e;
+$black-color: #35353a;
+$text-color: #7b809a;
+$white-color: #fff;
+$head-color: #344767;
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif !important;
+  background-color: $bg-body !important;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+}
+
+@mixin dimenssions($w) {
+  width: $w;
+  height: $w;
+  @content;
+}
+
+.active-link {
+  background-color: $pink-color !important;
+}
+.sidebar-move {
+  margin-left: -260px;
+}
+.sidebar-return {
+  margin-left: 12px;
+}
